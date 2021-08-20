@@ -5,7 +5,11 @@
 
 
 `mkdir grafana && chown 1000:1000 grafana`
+`export smtpserv=smtp.server.ru:port`
+`export emailaddres=email_addres`
+`export my_pass=password`
 
+docker-compose.yaml
 
 ```yml
 version: '3'
@@ -33,14 +37,19 @@ services:
             - --path.procfs=/host/proc
             - --path.sysfs=/host/sys
             - --path.rootfs=/rootfs
-            - --collector.filesystem.ignored-mount-points
-            - ^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)
+            - --collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)
         ports:
             - 9100:9100
         restart: always
     grafana:
         container_name: grafana
         image: grafana/grafana
+        environment:
+            - 'GF_SMTP_ENABLED=true'
+            - 'GF_SMTP_HOST=$smtpserv'
+            - 'GF_SMTP_USER=$emailaddres'
+            - 'GF_SMTP_PASSWORD=$my_pass'
+            - 'GF_SMTP_FROM_ADDRESS=$emailaddres'
         depends_on:
             - prometheus
         ports:
