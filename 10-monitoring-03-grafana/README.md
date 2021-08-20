@@ -4,10 +4,10 @@
 Не нашел как победить, иначе графана не стартует 
 
 
-`mkdir grafana && chown 1000:1000 grafana`
-`export smtpserv=smtp.server.ru:port`
-`export emailaddres=email_addres`
-`export my_pass=password`
+`mkdir grafana && chown 1000:1000 grafana`  
+`export smtpserv=smtp.server.ru:port`  
+`export emailaddres=email_addres`  
+`export my_pass=password`  
 
 docker-compose.yaml
 
