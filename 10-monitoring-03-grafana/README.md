@@ -74,26 +74,31 @@ scrape_configs:
     static_configs:
       - targets: ['node-exporter:9100']
 ```
-### Задание 1
+### Задание 1  
+
 ![img](img/IMG_20210818_154342_315.jpg)
 
 
 ## Задание 2
 
 Dashboard Panels:
-- Утилизация CPU для nodeexporter (в процентах, 100-idle)  
-    `100-avg(rate(node_cpu_seconds_total{mode="idle"}[30s]))without(cpu)*100`
+- Утилизация CPU для nodeexporter (в процентах, 100-idle)
+        `100-avg(rate(node_cpu_seconds_total{mode="idle"}[30s]))without(cpu)*100`
 - CPULA 1/5/15  
-    `node_load1`
-    `node_load5`
-    `node_load15`
+        `node_load1`
+        `node_load5`
+        `node_load15`
 - Количество свободной оперативной памяти  
-    `((node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes)/node_memory_MemTotal_bytes)*100`
+        `((node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes)/node_memory_MemTotal_bytes)*100`
 - Количество места на файловой системе  
-    `(node_filesystem_avail_bytes/node_filesystem_size_bytes)*100`
+        `(node_filesystem_avail_bytes/node_filesystem_size_bytes)*100`  
+        
+        
 ![img](img/IMG_20210820_085626_820.jpg)
 
-## Задание 3
+## Задание 3  
+
+
 ![img](img/IMG_20210820_112410_501.jpg)
 
 ## Задание 4
