@@ -32,10 +32,10 @@ services:
         image: grafana/grafana
         environment:
             - 'GF_SMTP_ENABLED=true'
-            - 'GF_SMTP_HOST=smtp.yandex.ru:465'
-            - 'GF_SMTP_USER=KarlEfimov@yandex.ru'
-            - 'GF_SMTP_PASSWORD=my_pass'
-            - 'GF_SMTP_FROM_ADDRESS=KarlEfimov@yandex.ru'
+            - 'GF_SMTP_HOST=$smtpserv'
+            - 'GF_SMTP_USER=$emailaddres'
+            - 'GF_SMTP_PASSWORD=$my_pass'
+            - 'GF_SMTP_FROM_ADDRESS=$emailaddres'
         depends_on:
             - prometheus
         ports:
