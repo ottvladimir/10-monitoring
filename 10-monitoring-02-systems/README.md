@@ -15,14 +15,13 @@ Push требует, чтобы отслеживаемая цель знала �
     - VictoriaMetrics - СУБД
     - Nagios pull - модель
 
-3. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
-используя технологии docker и docker-compose.
 
-В виде решения на это упражнение приведите выводы команд с вашего компьютера (виртуальной машины):
-
-    - curl http://localhost:8086/ping
-    - curl http://localhost:8888
-    - curl http://localhost:9092/kapacitor/v1/ping
+```bash
+[admin@rhel-home sandbox]$ curl http://localhost:8888
+<!DOCTYPE html><html><head><meta http-equiv="Content-type" content="text/html; charset=utf-8"><title>Chronograf</title><link rel="icon shortcut" href="/favicon.fa749080.ico"><link rel="stylesheet" href="/src.d80ed715.css"></head><body> <div id="react-root" data-basepath=""></div> <script src="/src.c278d833.js"></script> </body></html>
+[admin@rhel-home sandbox]$ curl http://localhost:9092/kapacitor/v1/ping
+[admin@rhel-home sandbox]$ 
+```
 
 А также скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`). 
 
